@@ -1,0 +1,72 @@
+---
+title: "R for data science notes"
+author: "Tyler Nardone"
+date: '2022-09-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+Two types of  questions that are always useful for making discoveries in data:
+1. What is the variation within my variables?
+2. What is the co-variation between my variables?
+
+### Histogram can be used to view the distribution of a continuous variable.
+
+### EDA questions
+<li> Which values are most common? why? </li>
+<li> Which values are rare and why? </li>
+<li> Are there any unusual patterns, what might explain them? </li>
+<li> Identify clusters. How are these observations similar to one another? </li>
+<li> What might explain the clusters? Is the apperance of clustering misleading? </li>
+<li> Unusual values. Outliers. repeat analyses w/ and w/o outliers to see how robust results are </li>
+
+<image src="https://d33wubrfki0l68.cloudfront.net/795c039ba2520455d833b4034befc8cf360a70ba/558a5/diagrams/data-science-explore.png">
+
+```{r}
+library(tidyverse)
+```
+
+## General Form of ggplot:
+```{r eval=FALSE}
+ggplot(data = <DATA>) +
+ <GEOM_FUNCTION>(
+ mapping = aes(<MAPPINGS>),
+ stat = <STAT>,
+ position = <POSITION>
+ ) +
+ <COORDINATE_FUNCTION> +
+ <FACET_FUNCTION>
+
+```
+
+## dplyr basics
+
+dplyr is a grammar of data manipulation.
+In this chapter you are going to learn the **five key dplyr functions** that allow you to solve the vast majority of your data manipulation challenges:
+
+mutate() Adds new variables that are functions of existing variables
+select() Picks variables based on their names
+filter() Picks cases based on their values
+summarise() Reduces multiple values down to a single summary
+arrange() Changes the ordering of the rows
+
+These can all be used in conjunction with group_by() which changes the scope of each function from operating on the entire dataset to operating on it group-by-group. These six functions provide the verbs for a language of data manipulation.
+
+All verbs work similarly:
+
+The first argument is a data frame.
+
+The subsequent arguments describe what to do with the data frame, using the variable names (without quotes).
+
+The result is a new data frame.
+
+Together these properties make it easy to chain together multiple simple steps to achieve a complex result. Let’s dive in and see how these verbs work.
+
+## Workflow: projects
+Dont want to save R environments, want to save scripts and data files that recreate the environment when run. Set RStudio to NOT preserve workspaces between sessions. This forces you to capture everything you want to have code instructions to recreate it saved. 
