@@ -1,0 +1,23 @@
+---
+title: "Mastering Shiny"
+author: "Tyler Nardone"
+date: '2022-09-07'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Shiny Workflow
+
+Every app will start with the same six lines of code: 
+```{r eval=FALSE}
+library(shiny)
+ui <- fluidPage(
+)
+server <- function(input, output, session) {
+}
+shinyApp(ui, server)
+```
+
