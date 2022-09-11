@@ -21,3 +21,9 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+This boilerplate can be added with a couple different shorcuts:
+<ul>
+<li>If you have app.R open type `shinyapp` and then `Shift` + `tab`</li>
+<li>If you are starting a new project, go File -> "New Project" -> "Shiny Web Application"</li>
+</ul>
+
